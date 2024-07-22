@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: monotype corsiva;
+        }
+        body{
+            background-color: blanchedalmond;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+        }
+        .input{
+            margin-top: 100px;
+            background-color: white;
+            height: 300px;
+            width: 400px;
+        }
+        button{
+            width: 100px;
+            background-color: aliceblue;
+            height: 50px;
+            border-radius: 5px;
+            position: fixed;
+            left: 45%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Matcher</h1>
+    <div class="container">
+        <input type="text" class="input" id="text-1" onkeyup="text_matched()">
+        <input type="text" class="input" id="text-2" onkeyup="text_matched()">
+    </div>
+    <button id="output">Check Match</button>
+    <script>
+        function text_matched(){
+            const text1= document.getElementById("text-1")
+            const text2= document.getElementById("text-2")
+            const out = document.getElementById("output")
+            if(text1.value==text2.value){
+                out.innerText=`matched`
+                out.style.backgroundColor="green"
+
+            }
+            else{
+                out.innerText=`not match`
+                out.style.backgroundColor="red"
+            }
+        }
+        
+    </script>
+</body>
+</html>
